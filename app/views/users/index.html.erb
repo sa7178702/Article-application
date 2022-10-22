@@ -1,0 +1,32 @@
+<h4 style="margin-top: 20px;">Dashboard</h4>
+<div class="container">
+	<div class="row">
+      <div class="col-sm-4 i_center">
+      	<% @user.each do |user| %>
+		  <div class="card mb-3 " style="width: 18rem;">
+	     <%#=image_tag(user.avatar) if user.avatar.attached?%>
+	      <div class="card-body">
+		       <h5 class="card-text"><%= user.name %></h5>
+		       <p class="card-text"><%=user.email%></p>
+		       <p class="card-text"><%=user.address%></p>
+		       <% if user.articles.present?%>
+		       <b class="card-text">Total article : <%= (user.articles.ids).count %></b>
+		       <% end %><br><br>
+		        <%= link_to "View",user_path(user),class:"btn btn-primary",style: "width: 150px;margin-left:20px;margin-bottom:20px;"%>&nbsp;
+	      </div>
+      </div>
+     <% end %>
+    </div>
+		</div>
+	</div>
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @user %>
+    </div>
+    <%= will_paginate @user, :container => false %>
+  </div>
+
+
+
+
+

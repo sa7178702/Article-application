@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4 mt-4 login_form">
+			<h4 class="add_article">Log In</h4>
+		<%= form_for(:session, url: login_path) do |form| %>
+			<div>
+			<%= form.label :email %><br>
+			<%= form.text_field :email, class: "form-control",required: true %>
+			</div>
+			  <div>
+		    <%= form.label :password %><br>
+			<%= form.password_field :password_digest, class: "form-control",required: true %>
+			</div>
+			  <div><br>
+			    <%= form.submit "Log In", class: "btn btn-success"%>
+			</div>
+		<% end %>
+		</div>
+		<div class="col-sm-4"></div>
+	</div>
+</div>

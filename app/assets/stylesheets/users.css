@@ -1,0 +1,26 @@
+.u_profile
+{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	border: 1px solid black;
+}
+.u_backbtn
+{
+	width: 200px;
+
+}
+.form
+{
+	background: #B2EBF2;
+	border-radius: 80px 10px  ;
+	padding: 10px;
+}
+
+.login_form
+{
+	background: #B2EBF2;
+	border-radius: 50px 10px  ;
+	padding: 10px;
+}
+

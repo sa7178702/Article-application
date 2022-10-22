@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-gray shadow">
+  <a class="navbar-brand" href="#" style="color: black;margin-left: 20px;">Article App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<% if current_user.present? %>
+ <%= current_user.name%>
+     <div class="dropdown logout">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+         Bloger
+       </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><%= link_to "All User",users_path, class: "dropdown-item"%></li>
+      </ul>
+    </div>
+
+    <div class="dropdown add_article">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        All Article
+       </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li> <%= link_to "Add Article",new_article_path, class: "dropdown-item"%></li>
+        <li><%= link_to "Show all article",articles_path, class: "dropdown-item"%></li>
+      </ul>
+    </div>
+      <%= link_to "Log Out", logout_path,class:"btn btn-primary add_article" %>&nbsp;
+<% else %>
+        <%= link_to "Sign Up", signup_path ,class: "btn btn-primary hbtn"%>&nbsp;&nbsp;
+        <%= link_to "Log In", login_path , class: "btn btn-primary"%>
+<% end %>
+    </ul>
+  </div>
+</nav>

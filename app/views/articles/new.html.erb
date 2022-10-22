@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-3"></div>
+    <div class="col-sm-6 mt-2">
+      <h4>Article Add From</h4>
+      <%= form_with model: @article do |form| %>
+      <%=form.label :title %>
+      <%=form.text_field :title, class:"form-control", required: true %>
+      <%= form.label :description %><br>
+      <%= form.text_area :description, class:"form-control" ,required: true %>
+      <%#= form.label :User_id %>
+      <%= form.hidden_field :user_id, value: current_user.id,class:"form-control hide"%><br>
+      <%=form.label :Image%>
+      <%=form.file_field :avatar, class:"form-control", required: true %><br>
+      <%=form.submit "SUBMIT",class:"btn btn-success"%>
+      <%= link_to "Back",articles_path,class:"btn btn-info"%>
+      <%end%>
+    </div>
+  <div class="col-sm-3"></div>
+</div>

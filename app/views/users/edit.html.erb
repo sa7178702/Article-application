@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-3"></div>
+    <div class="col-sm-6 mt-2">
+      <h4>User Add From</h4>
+      <%= form_with model: @user do |form| %>
+      <%=form.label :name %>
+      <%=form.text_field :name, class:"form-control"%>
+      <%= form.label :email %><br>
+      <%= form.text_field :email, class:"form-control" %>
+      <%= form.label :password %><br>
+      <%= form.text_field :password_digest, class:"form-control" %>
+      <%= form.label :address %><br>
+      <%= form.text_field :address, class:"form-control" %>
+      <%=form.label :Image%>
+      <%=form.file_field :avatar, class:"form-control"%><br>
+      <%=form.submit "Update",class:"btn btn-success"%>
+      <%= link_to "Back",users_path(@user),class:"btn btn-info"%>
+      <%end%>
+    </div>
+  <div class="col-sm-3"></div>
+</div>
